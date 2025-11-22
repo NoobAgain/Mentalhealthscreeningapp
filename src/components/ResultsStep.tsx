@@ -46,7 +46,7 @@ export function ResultsStep({ score }: ResultsStepProps) {
   return (
     <div>
       <h2 className="text-indigo-900 mb-2">
-        Langkah 4: Hasil Skrining
+        Hasil Skrining
       </h2>
       <p className="text-gray-600 mb-6">
         Berikut adalah hasil skrining kesehatan mental Anda.
@@ -84,7 +84,7 @@ export function ResultsStep({ score }: ResultsStepProps) {
               Tingkat Risiko: {result.level}
             </h3>
             <p className="text-gray-700 text-sm">
-              Skor: {score}/6
+              Skor: {score}/20
             </p>
           </div>
         </div>

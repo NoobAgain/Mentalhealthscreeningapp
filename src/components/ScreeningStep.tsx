@@ -19,33 +19,103 @@ const getQuestions = (userData: { gender: string | null; age: string; region: st
   return [
     {
       id: 'q1',
-      question: 'Apakah Anda sering merasa cemas atau khawatir berlebihan dalam 2 minggu terakhir?',
-      explanation: `Halo ${genderText}, pertanyaan ini membantu kami memahami tingkat kecemasan yang mungkin ${userData.gender === 'male' ? 'Bapak' : 'Ibu'} alami. Di ${region}, banyak orang usia ${ageNum} tahun mengalami kecemasan karena berbagai tekanan. Kecemasan berlebihan bisa mempengaruhi kualitas hidup sehari-hari.`,
+      question: 'Apakah Anda sering merasa sakit kepala?',
+      explanation: `${genderText}, sakit kepala bisa menjadi manifestasi dari stres atau kecemasan. Di usia ${ageNum} tahun, penting untuk mengenali apakah sakit kepala yang ${userData.gender === 'male' ? 'Bapak' : 'Ibu'} alami berhubungan dengan kondisi mental atau fisik.`,
     },
     {
       id: 'q2',
-      question: 'Apakah Anda kehilangan minat atau kesenangan dalam melakukan aktivitas yang biasanya Anda nikmati?',
-      explanation: `${genderText}, kehilangan minat pada aktivitas favorit adalah salah satu tanda penting yang perlu kita perhatikan. Untuk seseorang di usia ${ageNum} tahun seperti ${userData.gender === 'male' ? 'Bapak' : 'Ibu'}, hal ini bisa sangat mempengaruhi kesejahteraan mental.`,
+      question: 'Apakah Anda kehilangan nafsu makan?',
+      explanation: `Perubahan nafsu makan, ${genderText}, sering kali merupakan indikator awal dari masalah kesehatan mental. Untuk seseorang di ${region}, menjaga pola makan yang sehat sangat penting untuk kesejahteraan.`,
     },
     {
       id: 'q3',
-      question: 'Apakah Anda mengalami kesulitan tidur, seperti sulit tertidur, sering terbangun, atau tidur terlalu banyak?',
-      explanation: `Masalah tidur sangat umum terjadi, ${genderText}. Di usia ${ageNum} tahun, pola tidur yang sehat sangat penting untuk kesehatan mental dan fisik. Gangguan tidur bisa menjadi indikator atau pemicu masalah kesehatan mental.`,
+      question: 'Apakah tidur Anda tidak nyenyak?',
+      explanation: `${genderText}, kualitas tidur sangat mempengaruhi kesehatan mental dan fisik. Di usia ${ageNum} tahun, tidur yang berkualitas adalah kunci untuk produktivitas dan kesejahteraan sehari-hari.`,
     },
     {
       id: 'q4',
-      question: 'Apakah Anda merasa lelah atau kekurangan energi hampir setiap hari?',
-      explanation: `${genderText} dari ${region}, kelelahan kronis bisa disebabkan oleh berbagai faktor termasuk stres dan kondisi mental. Penting bagi kami untuk mengetahui kondisi energi ${userData.gender === 'male' ? 'Bapak' : 'Ibu'} sehari-hari.`,
+      question: 'Apakah Anda mudah merasa takut?',
+      explanation: `Rasa takut yang berlebihan, ${genderText}, bisa menjadi tanda dari gangguan kecemasan. Penting bagi kami untuk memahami apakah ${userData.gender === 'male' ? 'Bapak' : 'Ibu'} mengalami ketakutan yang mengganggu aktivitas sehari-hari.`,
     },
     {
       id: 'q5',
-      question: 'Apakah Anda mengalami perubahan nafsu makan yang signifikan (makan terlalu banyak atau terlalu sedikit)?',
-      explanation: `Perubahan pola makan bisa mencerminkan kondisi emosional ${userData.gender === 'male' ? 'Bapak' : 'Ibu'}. Di usia ${ageNum} tahun, penting untuk menjaga pola makan yang sehat untuk kesehatan mental dan fisik.`,
+      question: 'Apakah Anda merasa cemas, tegang, atau khawatir?',
+      explanation: `${genderText} dari ${region}, kecemasan dan ketegangan adalah respons alami terhadap stres. Namun jika berlebihan, hal ini perlu mendapat perhatian khusus untuk kesehatan mental ${userData.gender === 'male' ? 'Bapak' : 'Ibu'}.`,
     },
     {
       id: 'q6',
-      question: 'Apakah Anda merasa sulit berkonsentrasi, berpikir, atau membuat keputusan?',
-      explanation: `${genderText}, kesulitan konsentrasi bisa sangat mempengaruhi produktivitas dan kualitas hidup. Untuk seseorang di ${region}, hal ini bisa berdampak pada aktivitas sehari-hari dan pekerjaan.`,
+      question: 'Apakah tangan Anda gemetar?',
+      explanation: `Gemetar bisa menjadi gejala fisik dari kecemasan atau stres, ${genderText}. Di usia ${ageNum} tahun, penting untuk mengetahui apakah ini terkait dengan kondisi mental atau faktor lain.`,
+    },
+    {
+      id: 'q7',
+      question: 'Apakah Anda mengalami gangguan pencernaan?',
+      explanation: `${genderText}, sistem pencernaan sangat terpengaruh oleh kondisi mental. Gangguan pencernaan yang berulang bisa menjadi sinyal dari stres atau kecemasan yang ${userData.gender === 'male' ? 'Bapak' : 'Ibu'} alami.`,
+    },
+    {
+      id: 'q8',
+      question: 'Apakah Anda merasa sulit berpikir jernih?',
+      explanation: `Kesulitan berpikir jernih, ${genderText}, bisa sangat mempengaruhi pekerjaan dan kehidupan sehari-hari. Untuk seseorang di ${region}, kemampuan kognitif yang baik sangat penting.`,
+    },
+    {
+      id: 'q9',
+      question: 'Apakah Anda merasa tidak bahagia?',
+      explanation: `${genderText}, perasaan tidak bahagia yang berkepanjangan bisa menjadi tanda depresi. Di usia ${ageNum} tahun, kebahagiaan dan kepuasan hidup sangat penting untuk kesejahteraan mental.`,
+    },
+    {
+      id: 'q10',
+      question: 'Apakah Anda lebih sering menangis?',
+      explanation: `Menangis lebih sering dari biasanya, ${genderText}, bisa menunjukkan ketidakstabilan emosi yang perlu diperhatikan. Ini adalah informasi penting untuk penilaian kesehatan mental ${userData.gender === 'male' ? 'Bapak' : 'Ibu'}.`,
+    },
+    {
+      id: 'q11',
+      question: 'Apakah Anda merasa sulit untuk menikmati aktivitas sehari-hari?',
+      explanation: `${genderText} dari ${region}, anhedonia atau hilangnya kemampuan menikmati aktivitas adalah gejala penting dari depresi. Hal ini bisa sangat mempengaruhi kualitas hidup ${userData.gender === 'male' ? 'Bapak' : 'Ibu'}.`,
+    },
+    {
+      id: 'q12',
+      question: 'Apakah Anda mengalami kesulitan untuk mengambil keputusan?',
+      explanation: `Kesulitan mengambil keputusan, ${genderText}, bisa menjadi dampak dari kecemasan atau depresi. Di usia ${ageNum} tahun, kemampuan membuat keputusan yang baik sangat penting.`,
+    },
+    {
+      id: 'q13',
+      question: 'Apakah aktivitas/tugas sehari-hari Anda terbengkalai?',
+      explanation: `${genderText}, ketika tugas sehari-hari terbengkalai, ini bisa menjadi indikator bahwa kesehatan mental ${userData.gender === 'male' ? 'Bapak' : 'Ibu'} memerlukan perhatian lebih.`,
+    },
+    {
+      id: 'q14',
+      question: 'Apakah Anda merasa tidak mampu berperan dalam kehidupan ini?',
+      explanation: `Perasaan tidak mampu menjalankan peran, ${genderText}, adalah gejala serius yang perlu diperhatikan. Untuk seseorang di ${region}, merasa berdaya adalah hal yang sangat penting.`,
+    },
+    {
+      id: 'q15',
+      question: 'Apakah Anda kehilangan minat terhadap banyak hal?',
+      explanation: `${genderText} di usia ${ageNum} tahun, kehilangan minat yang luas bisa menjadi tanda depresi mayor. Informasi ini sangat penting untuk penilaian kondisi ${userData.gender === 'male' ? 'Bapak' : 'Ibu'}.`,
+    },
+    {
+      id: 'q16',
+      question: 'Apakah Anda merasa tidak berharga?',
+      explanation: `Perasaan tidak berharga, ${genderText}, adalah gejala depresi yang serius. Penting bagi ${userData.gender === 'male' ? 'Bapak' : 'Ibu'} untuk mengetahui bahwa setiap orang memiliki nilai dan pentingnya mencari bantuan.`,
+    },
+    {
+      id: 'q17',
+      question: 'Apakah Anda mempunyai pikiran untuk mengakhiri hidup Anda?',
+      explanation: `${genderText}, pertanyaan ini sangat penting dan sensitif. Pikiran untuk mengakhiri hidup adalah tanda darurat yang memerlukan bantuan segera. Kami di sini untuk membantu ${userData.gender === 'male' ? 'Bapak' : 'Ibu'}.`,
+    },
+    {
+      id: 'q18',
+      question: 'Apakah Anda merasa lelah sepanjang waktu?',
+      explanation: `Kelelahan kronis, ${genderText}, bisa disebabkan oleh depresi atau kecemasan. Di ${region}, penting untuk membedakan antara kelelahan fisik dan mental.`,
+    },
+    {
+      id: 'q19',
+      question: 'Apakah Anda merasa tidak enak di perut?',
+      explanation: `${genderText}, keluhan perut yang tidak enak bisa berhubungan dengan kondisi mental seperti kecemasan. Sistem pencernaan dan mental sangat terkait erat.`,
+    },
+    {
+      id: 'q20',
+      question: 'Apakah Anda mudah lelah?',
+      explanation: `Mudah lelah, ${genderText} di usia ${ageNum} tahun, bisa menjadi tanda dari depresi atau kelelahan mental. Ini penting untuk evaluasi kesehatan mental ${userData.gender === 'male' ? 'Bapak' : 'Ibu'} secara menyeluruh.`,
     },
   ];
 };
@@ -59,28 +129,84 @@ const getAiraComment = (
   
   const comments: { [key: string]: { yes: string; no: string } } = {
     q1: {
-      yes: `Terima kasih atas kejujuran ${name}. Kecemasan adalah respons alami, tapi jika berlebihan, kita perlu perhatikan bersama ya. Mari lanjut ke pertanyaan berikutnya.`,
-      no: `Senang mendengarnya, ${name}! Kondisi mental yang stabil sangat penting. Mari kita lanjutkan untuk gambaran yang lebih lengkap.`,
+      yes: `Terima kasih sudah jujur, ${name}. Sakit kepala yang sering bisa melelahkan. Mari kita lanjutkan untuk gambaran yang lebih lengkap.`,
+      no: `Bagus, ${name}! Tidak ada sakit kepala berulang adalah kabar baik. Yuk lanjut ke pertanyaan berikutnya.`,
     },
     q2: {
-      yes: `Saya memahami ${name}. Kehilangan minat pada hal yang biasanya menyenangkan memang bisa membuat hari terasa berat. Informasi ini sangat membantu untuk penilaian kita.`,
-      no: `Bagus sekali, ${name}! Tetap menikmati aktivitas favorit adalah tanda kesehatan mental yang baik. Yuk lanjut.`,
+      yes: `Saya catat ya ${name}. Perubahan nafsu makan memang bisa menjadi indikator penting. Terima kasih atas kejujurannya.`,
+      no: `Senang dengar nafsu makan ${name} baik-baik saja! Mari kita teruskan.`,
     },
     q3: {
-      yes: `${name}, masalah tidur bisa sangat melelahkan. Tidur yang berkualitas sangat penting untuk kesehatan. Saya catat ini ya untuk rekomendasi nanti.`,
-      no: `Wah, pola tidur ${name} terdengar cukup baik! Tidur berkualitas sangat mendukung kesehatan mental. Mari lanjutkan.`,
+      yes: `${name}, tidur yang tidak nyenyak pasti sangat mengganggu. Saya memahami dan ini akan membantu penilaian kita.`,
+      no: `Tidur nyenyak adalah modal penting, ${name}! Pertahankan ya. Lanjut ke pertanyaan selanjutnya.`,
     },
     q4: {
-      yes: `Saya paham ${name}. Kelelahan terus-menerus memang bisa membuat semua terasa berat. Terima kasih sudah berbagi, ini penting untuk penilaian kita.`,
-      no: `Energi yang baik adalah modal penting, ${name}! Pertahankan ya. Mari kita teruskan penilaiannya.`,
+      yes: `Saya memahami ${name}. Rasa takut yang berlebihan bisa sangat membatasi. Terima kasih sudah berbagi.`,
+      no: `${name} terdengar cukup tenang menghadapi situasi. Itu bagus! Mari lanjutkan.`,
     },
     q5: {
-      yes: `${name}, perubahan pola makan memang bisa mencerminkan kondisi emosional. Terima kasih atas informasinya, ini akan membantu kita memberi rekomendasi yang tepat.`,
-      no: `Pola makan yang stabil itu bagus, ${name}! Ini menunjukkan keseimbangan yang baik. Lanjut ke pertanyaan selanjutnya ya.`,
+      yes: `${name}, kecemasan dan ketegangan memang bisa sangat membebani. Informasi ini penting untuk rekomendasi nanti.`,
+      no: `Wah, ${name} terlihat cukup tenang! Kondisi mental yang stabil itu penting. Yuk lanjut.`,
     },
     q6: {
-      yes: `Saya memahami ${name}. Kesulitan konsentrasi memang bisa sangat mengganggu aktivitas sehari-hari. Mari kita selesaikan penilaian ini untuk solusi yang tepat.`,
-      no: `Kemampuan fokus yang baik itu penting, ${name}! Anda sudah hampir selesai, tinggal beberapa pertanyaan lagi.`,
+      yes: `Terima kasih ${name}. Gemetar bisa menjadi respon fisik dari kecemasan. Mari kita lanjut untuk penilaian lebih lengkap.`,
+      no: `Baik ${name}, tidak ada gemetar adalah tanda yang baik. Lanjut ke pertanyaan berikutnya ya.`,
+    },
+    q7: {
+      yes: `${name}, gangguan pencernaan memang bisa terkait dengan kondisi mental. Saya catat informasi ini.`,
+      no: `Pencernaan yang sehat itu penting, ${name}! Senang mendengarnya. Mari lanjut.`,
+    },
+    q8: {
+      yes: `Saya paham ${name}. Kesulitan berpikir jernih pasti membuat frustasi. Terima kasih sudah jujur.`,
+      no: `Kemampuan berpikir jernih yang baik, ${name}! Itu modal penting. Yuk lanjutkan.`,
+    },
+    q9: {
+      yes: `${name}, merasa tidak bahagia adalah hal yang penting untuk diperhatikan. Saya di sini untuk membantu.`,
+      no: `Senang ${name} merasa bahagia! Kebahagiaan adalah kunci kesehatan mental. Mari lanjut.`,
+    },
+    q10: {
+      yes: `Terima kasih atas keterbukaan ${name}. Emosi yang labil perlu diperhatikan. Mari kita lanjutkan.`,
+      no: `${name} terlihat stabil secara emosional. Itu bagus! Lanjut ke pertanyaan selanjutnya.`,
+    },
+    q11: {
+      yes: `${name}, kehilangan kemampuan menikmati aktivitas adalah hal serius. Saya memahami kondisi ini.`,
+      no: `Masih bisa menikmati aktivitas itu penting, ${name}! Pertahankan ya. Yuk lanjut.`,
+    },
+    q12: {
+      yes: `Kesulitan mengambil keputusan bisa sangat menghambat, ${name}. Terima kasih sudah berbagi.`,
+      no: `${name} masih bisa membuat keputusan dengan baik. Kemampuan yang penting! Mari lanjutkan.`,
+    },
+    q13: {
+      yes: `${name}, tugas yang terbengkalai bisa menjadi beban tambahan. Saya catat ini untuk rekomendasi nanti.`,
+      no: `${name} masih bisa menjalankan tugas dengan baik! Itu pertanda positif. Yuk lanjut.`,
+    },
+    q14: {
+      yes: `${name}, perasaan tidak mampu itu sangat berat. Tapi ingat, mencari bantuan adalah langkah berani. Lanjut ya.`,
+      no: `${name} masih merasa mampu berperan. Itu kekuatan yang luar biasa! Mari lanjutkan.`,
+    },
+    q15: {
+      yes: `Kehilangan minat yang luas itu serius, ${name}. Terima kasih atas kepercayaan ${userData.gender === 'male' ? 'Bapak' : 'Ibu'} untuk berbagi.`,
+      no: `${name} masih memiliki minat pada banyak hal! Itu sangat baik. Yuk lanjut.`,
+    },
+    q16: {
+      yes: `${name}, ${userData.gender === 'male' ? 'Bapak' : 'Ibu'} sangat berharga. Perasaan ini perlu kita tangani bersama. Mari lanjutkan penilaian.`,
+      no: `${name} menghargai diri sendiri dengan baik! Self-worth yang baik sangat penting. Lanjut ya.`,
+    },
+    q17: {
+      yes: `${name}, terima kasih atas keberanian ${userData.gender === 'male' ? 'Bapak' : 'Ibu'} berbagi hal ini. Ini sangat serius dan akan menjadi prioritas dalam rekomendasi. Mari selesaikan penilaian ini.`,
+      no: `${name}, senang mendengarnya. Mari kita lanjutkan untuk penilaian yang lengkap.`,
+    },
+    q18: {
+      yes: `Lelah sepanjang waktu pasti sangat melelahkan ya ${name}. Saya catat untuk rekomendasi terbaik.`,
+      no: `Energi yang cukup itu penting, ${name}! Bagus sekali. Yuk lanjut.`,
+    },
+    q19: {
+      yes: `${name}, ketidaknyamanan perut bisa terkait dengan kondisi mental. Terima kasih atas informasinya.`,
+      no: `Perut yang nyaman itu baik, ${name}! Lanjut ke pertanyaan terakhir ya.`,
+    },
+    q20: {
+      yes: `${name}, mudah lelah memang bisa mengganggu aktivitas. Terima kasih sudah menyelesaikan semua pertanyaan!`,
+      no: `Stamina yang baik, ${name}! Terima kasih sudah menyelesaikan skrining ini dengan jujur.`,
     },
   };
 

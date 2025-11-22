@@ -57,7 +57,7 @@ export default function App() {
   const canProceed = () => {
     if (currentStep === 1) return selectedGender !== null && age !== '' && region !== '';
     if (currentStep === 2 && userChoice === 'screening') {
-      return Object.keys(screeningAnswers).length === 6; // 6 questions in new screening
+      return Object.keys(screeningAnswers).length === 20; // 20 questions in SRQ-20
     }
     return true;
   };
@@ -114,7 +114,7 @@ export default function App() {
             {currentStep === 3 && userChoice === 'screening' && showDetailedResults && (
               <ResultsPage 
                 score={calculateScore()} 
-                maxScore={6}
+                maxScore={20}
                 userData={userData}
                 answers={screeningAnswers}
               />

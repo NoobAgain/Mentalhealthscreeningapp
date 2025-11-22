@@ -1,5 +1,8 @@
-import React from 'react';
-import { AlertTriangle, Bot, Stethoscope, Calendar, Phone, FileText, Brain, Sparkles, Activity, Heart, TrendingUp } from 'lucide-react';
+import React, { useState } from 'react';
+import { AlertTriangle, Bot, Stethoscope, Calendar, Phone, FileText, Brain, Sparkles, Activity, Heart, TrendingUp, Download } from 'lucide-react';
+import { ChatbotAI } from './ChatbotAI';
+import { AiraAvatar } from './AiraAvatar';
+import { generatePDFReport } from '../utils/pdfGenerator';
 
 interface ResultsPageProps {
   score: number;
@@ -13,6 +16,7 @@ interface ResultsPageProps {
 }
 
 export function ResultsPage({ score, maxScore, userData, answers }: ResultsPageProps) {
+  const [showChatbot, setShowChatbot] = useState(false);
   const yesCount = Object.values(answers).filter(a => a === true).length;
   const noCount = Object.values(answers).filter(a => a === false).length;
   const percentage = (yesCount / maxScore) * 100;
@@ -165,7 +169,10 @@ export function ResultsPage({ score, maxScore, userData, answers }: ResultsPageP
 
         <div className="grid md:grid-cols-2 gap-4">
           {/* Tombol Chatbot AI */}
-          <button className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl p-6 transition-all shadow-lg hover:shadow-xl hover:scale-105 text-left">
+          <button 
+            onClick={() => setShowChatbot(true)}
+            className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl p-6 transition-all shadow-lg hover:shadow-xl hover:scale-105 text-left"
+          >
             <div className="flex items-center gap-3 mb-3">
               <div className="bg-white/20 p-3 rounded-lg">
                 <Bot className="w-8 h-8" />
@@ -265,11 +272,29 @@ export function ResultsPage({ score, maxScore, userData, answers }: ResultsPageP
         <p className="text-green-100 text-sm mb-4">
           Download laporan lengkap untuk dibawa saat konsultasi dengan dokter
         </p>
-        <button className="bg-white text-green-700 px-6 py-3 rounded-lg hover:bg-green-50 transition-all inline-flex items-center gap-2 shadow-md">
-          <FileText className="w-5 h-5" />
-          Download Laporan PDF
+        <button 
+          className="bg-white text-green-700 px-6 py-3 rounded-lg hover:bg-green-50 transition-all inline-flex items-center gap-2 shadow-md"
+          onClick={() => generatePDFReport({
+            userData,
+            score: yesCount,
+            maxScore,
+            answers,
+            date: new Date()
+          })}
+        >
+          <Download className="w-5 h-5" />
+          Download Laporan HTML
         </button>
       </div>
+
+      {/* Chatbot Modal */}
+      {showChatbot && (
+        <ChatbotAI
+          onClose={() => setShowChatbot(false)}
+          userData={userData}
+          score={yesCount}
+        />
+      )}
     </div>
   );
 }
